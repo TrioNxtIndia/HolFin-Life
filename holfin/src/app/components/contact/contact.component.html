@@ -1,0 +1,147 @@
+<div>
+    <div class="header">
+        <img [src]="bannerImage" alt="banner" class="image" />
+        <div class="text-container">
+            <h1>Your Trusted Partner and Advocate</h1>
+            <p class="py-3">Let us stand by your side as your trusted ally and advocate, guiding you towards your dreams
+                with innovative
+                opportunities and a secure path to success in the dynamic realm of finance with HolFin Life.</p>
+            <button class="btn rounded-pill start" routerLink="/services">Get Started</button>
+        </div>
+    </div>
+    <section class="contact py-5">
+        <div class="container">
+
+            <div class="contact-us pt-3 pb-5">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 card-row">
+                    <div class="col">
+                        <div class="card mt-4">
+                            <div class="card-body text-center">
+                                <i class="bi bi-phone-vibrate-fill"></i>
+                                <p class="card-text head">Our Contact</p>
+                                <h5 class="card-title">+1 804 496 1632</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mt-4">
+                            <div class="card-body text-center">
+                                <i class="bi bi-envelope-at-fill"></i>
+                                <p class="card-text head">Our Mail</p>
+                                <h5 class="card-title"><a href="mailto: dbharat@gmail.com"
+                                        style="text-decoration: none !important; color: black;">dbharat@gmail.com</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mt-4">
+                            <div class="card-body text-center">
+                                <i class="bi bi-buildings-fill"></i>
+                                <p class="card-text head">Our Main Office</p>
+                                <h5 class="card-title">7680 Opal Road Warrenton VA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-center fw-bold"> Get In Touch With Us</h3>
+            <p class="py-3">
+                Our vision to empower individuals and families to attain financial freedom and realize their dreams. We
+                believe in the transformative power of financial literacy, proper planning, and the opportunity for
+                entrepreneurship
+                in this thriving industry. Our goal is to ensure that no family is left behind on their journey towards
+                financial
+                security. Life is a journey marked by aspirations and ambitions, and <strong>HolFin Life</strong> is
+                committed to
+                providing the means
+                to turn those dreams into reality.
+            </p>
+
+            <div class="form-section" *ngIf="!successMsg">
+                <div class="card">
+                    <form [formGroup]="contactForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="mb-3">
+                                <input type="text" placeholder="Enter Your First Name" formControlName="fname"
+                                    class="form-control" id="firstName">
+                                <!-- Display error message if fname is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('fname')?.invalid && (contactForm.get('fname')?.dirty || contactForm.get('fname')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('fname')?.errors?.['required']">First Name
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('fname')?.errors?.['pattern']">First Name
+                                        must contain only alphabets and be between 3 and 40 characters</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" formControlName="lname" placeholder="Enter Your Last Name"
+                                    class="form-control" id="lastName">
+                                <!-- Display error message if lname is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('lname')?.invalid && (contactForm.get('lname')?.dirty || contactForm.get('lname')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('lname')?.errors?.['required']">Last Name
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('lname')?.errors?.['pattern']">Last Name
+                                        must contain only alphabets and be between 3 and 40 characters</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" formControlName="email" placeholder="Enter Your Email"
+                                    class="form-control" id="email">
+                                <!-- Display error message if email is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('email')?.errors?.['required']">Email
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('email')?.errors?.['pattern']">Invalid email
+                                        format</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input formControlName="phone"
+                                    placeholder="Enter Your Phone Number (eg. +1 804 496 1632)" class="form-control"
+                                    id="phone">
+                                <div
+                                    *ngIf="contactForm.get('phone')?.invalid && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('phone')?.errors?.['required']">Phone Number
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('phone')?.errors?.['pattern']">
+                                        <span *ngIf="!contactForm.get('phone')?.errors?.['numbersOnly']">Only numbers
+                                            and spaces are allowed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" formControlName="message" id="message"
+                                    placeholder="Enter Your Message" rows="3"></textarea>
+                                <!-- Display error message if message is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('message')?.errors?.['required']">Message
+                                        required</div>
+                                </div>
+                            </div>
+                            <!-- recaptcha -->
+                            <div class="mb-3">
+                                <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+                                </ngx-recaptcha2>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn rounded-pill sub-button"
+                                    [disabled]="contactForm.invalid">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container" *ngIf="successMsg">
+        <div class="thank-box">
+            <h4>Message Has Been Sent</h4>
+            <p>Thank's For Contacting Us. We will be in touch with you shortly...</p>
+        </div>
+    </section>
+</div>

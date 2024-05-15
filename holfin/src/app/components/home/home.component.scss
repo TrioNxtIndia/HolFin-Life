@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.header {
+    padding: 0;
+    position: relative;
+
+    .image {
+        height: 100vh;
+        width: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .text-container {
+        position: absolute; /* Set position to absolute */
+        top: 50%; /* Align to the top edge of the parent container */
+        left: 50%; /* Align to the left edge of the parent container */
+        transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+        text-align: center; /* Align text center */
+    }
+    
+    /* Optional: Style for the text */
+    .text-container h1 {
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+        font-family: "Dancing Script", cursive;
+    }
+
+    .text-container p {
+        color: #fff;
+        font-size: large;
+    }
+    
+    @media (max-width: 767px) {
+        .text-container p {
+            display: none;
+        }  
+        .start {
+            margin-top: 40px;
+        }
+    }
+
+    .start {
+        background-color: #9655ff;
+        color: #fff;
+        padding: 10px 20px;
+    }
+    .start:hover {
+        background-color: #8c46fe;
+    }
+
+}
+
+.header::before {
+    background-color: rgba(0, 0, 0, 0.7);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.about {
+    p {
+        text-align: justify;
+    }
+    .image1 {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .vimage {
+        height: 230px;
+    }
+    .mimage {
+        height: 250px;
+    }
+
+    @media (max-width: 767px) {
+        .mimage {
+            display: none;
+        }
+        .image1 {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.services {
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 5px;
+
+        p {
+            text-align: justify;
+        }
+    }
+}
+
+.contact {
+    p {
+        text-align: justify;
+    }
+
+    .form-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .card {
+            width: 100%; 
+        }
+    }
+    
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        .card {
+            width: 80%; 
+        }
+    }
+
+    .form-control {
+        border: none;
+        border-bottom: 1px solid #ced4da;
+        border-radius: 1px;
+        padding: .375rem 0; /* Specify bottom border */
+    }
+
+    .form-control:focus {
+        border-color: #ced4da;
+        box-shadow: none;
+    }
+
+    .sub-button{
+        height: 45px;
+        background-color: #9655ff;
+        color: white;
+        width: 100%;
+    }
+
+    .sub-button:hover {
+        font-weight: bold;
+        background-color: #8c46fe;
+    }
+}
+
+.view {
+    color: #8235ff;
+    border: 1px solid #8235ff;
+}
+
+.view:hover {
+    color: #fff;
+    background: #8235ff;
+}
+
+.err {
+    color: red;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.schedule {
+    color: #8235ff;
+    border: 1px solid #8235ff;
+    font-weight: 700;
+}
+
+.schedule:hover {
+    color: #fff;
+    background: #8235ff;
+}
+
+.thank-box {
+    text-align: center;
+    border: 1px solid #0f5132;
+    padding: 20px;
+    margin: -20px 0 20px 0;
+    background-color: #edfff7;
+    border-radius: 5px;
+  
+    h4 {
+      color: #0f5132;
+    }
+  
+    p {
+      font-weight: bold;
+    }
+  }

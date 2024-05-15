@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.header {
+    padding: 0;
+    position: relative;
+
+    .image {
+        height: 100vh;
+        width: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .text-container {
+        position: absolute; /* Set position to absolute */
+        top: 50%; /* Align to the top edge of the parent container */
+        left: 50%; /* Align to the left edge of the parent container */
+        transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+        text-align: center; /* Align text center */
+    }
+    
+    /* Optional: Style for the text */
+    .text-container h1 {
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+        font-family: "Dancing Script", cursive;
+    }
+
+    .text-container p {
+        color: #fff;
+        font-size: large;
+    }
+    
+    @media (max-width: 767px) {
+        .text-container p {
+            display: none;
+        }  
+    }
+
+}
+
+.header::before {
+    background-color: rgba(0, 0, 0, 0.7);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.services {
+    .card {
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        border-radius: 10px;
+
+        p {
+            text-align: justify;
+        }
+    }
+
+    .card:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .schedule {
+        color: #8235ff;
+        border: 1px solid #8235ff;
+        font-weight: 600;
+    }
+
+    .schedule:hover {
+        color: #fff;
+        background: #8235ff;
+    }
+}

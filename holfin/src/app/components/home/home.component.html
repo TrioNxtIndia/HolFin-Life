@@ -1,0 +1,230 @@
+<div>
+    <div class="header">
+        <img [src]="bannerImage" alt="banner" class="image" />
+        <div class="text-container">
+            <!-- <h1>Inspiring Success Stories, Yours Could Be Next</h1> -->
+            <h1>Empower Your Financial Future, Together</h1>
+            <p class="py-3">At HolFin Life, we specialize in crafting personalized financial plans designed exclusively
+                for you, ensuring your
+                financial security at every stage of life's journey.</p>
+            <button class="btn rounded-pill start" routerLink="/services">Get Started</button>
+        </div>
+    </div>
+    <!-- about section  -->
+    <section class="about py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold">About</h2>
+            <p class="py-3">
+                Welcome to <strong>HolFin Life</strong>, your dedicated partner in achieving financial well-being and
+                realizing your dreams.
+                At <strong>HolFin Life</strong>, we are committed to providing innovative financial solutions tailored
+                to your unique needs and
+                aspirations. With a focus on personalized service, our team of independent financial professionals works
+                closely
+                with each client to understand their individual circumstances, goals, and risk tolerance. Whether you're
+                planning
+                for retirement, saving for your children's education, or starting a new business venture, we're here to
+                help you
+                navigate the complexities of financial planning with confidence.
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Vision</h3>
+                    <p class="py-3">
+                        At <strong>HolFin Life</strong>, our vision is clear: to empower individuals and families to
+                        attain financial freedom and realize
+                        their dreams. We believe in the transformative power of financial literacy, proper planning, and
+                        the opportunity for
+                        entrepreneurship in this thriving industry. Our goal is to ensure that no family is left behind
+                        on their journey
+                        towards financial security. Life is a journey marked by aspirations and ambitions, and
+                        <strong>HolFin Life</strong> is committed to
+                        providing the means to turn those dreams into reality.
+                    </p>
+                </div>
+                <div class="col-md-6 image1">
+                    <img [src]="visionImage" alt="banner" class="vimage" />
+                </div>
+                <div class="col-md-6 image2">
+                    <img [src]="missionImage" alt="banner" class="mimage" />
+                </div>
+                <div class="col-md-6">
+                    <h3>Mission</h3>
+                    <p class="py-3">
+                        At <strong>HolFin Life</strong>, our mission is to enrich families by offering needs-based
+                        financial
+                        planning and a risk-free pathway to entrepreneurship. With our partnership, we aim to embolden
+                        you to pursue
+                        your aspirations fearlessly and thrive in your endeavors. Let us stand by your side as your
+                        trusted companion
+                        and advocate, guiding you towards the realization of your goals. Together, we'll build a future
+                        where financial
+                        security and fulfillment are within reach for every family.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section end  -->
+    <section class="services pt-3 pb-5">
+        <div class="container">
+            <h2 class="text-center fw-bold">Services</h2>
+            <div class="row mt-2">
+                <div class="col-lg-6 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Personal Financial Planning</h5>
+                            <p class="card-text">Individually tailored financial strategies crafted to match your unique
+                                goals. Whether it's securing comprehensive insurance or devising a solid retirement
+                                plan, our personalized approach ensures a stable and prosperous future for you and your
+                                family.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Free Financial Health Check</h5>
+                            <p class="card-text">
+                                Gain clarity and confidence in your financial future with our complimentary Financial
+                                Health Check.
+                                Allow us to evaluate your current financial status and customize a plan specifically
+                                designed to help
+                                you reach your goals with certainty and peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Health Insurance</h5>
+                            <p class="card-text">
+                                Secure your well-being with our comprehensive Health Insurance solutions. Whether you're
+                                considering Long Term Care or Medicare plans, we provide coverage for every step of your
+                                health journey,
+                                ensuring your peace of mind and financial security.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Risk - Free Business Opportunity</h5>
+                            <p class="card-text">
+                                Embark on an exciting journey to entrepreneurship with our rewarding Business
+                                Opportunity. No prior
+                                experience required—just ambition and the determination to forge a prosperous future.
+                                Let us provide the
+                                support and resources you need to turn your dreams into reality.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- more section -->
+                <div class="more text-center pt-5">
+                    <button class="btn schedule" routerLink="services">More Services...</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services section end  -->
+
+    <section class="contact py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold"> Contact</h2>
+            <p class="py-3">
+                Our vision to empower individuals and families to attain financial freedom and realize their dreams. We
+                believe in the transformative power of financial literacy, proper planning, and the opportunity for
+                entrepreneurship
+                in this thriving industry. Our goal is to ensure that no family is left behind on their journey towards
+                financial
+                security. Life is a journey marked by aspirations and ambitions, and <strong>HolFin Life</strong> is committed to
+                providing the means
+                to turn those dreams into reality.
+            </p>
+            <div class="form-section" *ngIf="!successMsg">
+                <div class="card">
+                    <form [formGroup]="contactForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="mb-3">
+                                <input type="text" placeholder="Enter Your First Name" formControlName="fname"
+                                    class="form-control" id="firstName">
+                                <!-- Display error message if fname is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('fname')?.invalid && (contactForm.get('fname')?.dirty || contactForm.get('fname')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('fname')?.errors?.['required']">First Name
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('fname')?.errors?.['pattern']">First Name
+                                        must contain only alphabets and be between 3 and 40 characters</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" formControlName="lname" placeholder="Enter Your Last Name"
+                                    class="form-control" id="lastName">
+                                <!-- Display error message if lname is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('lname')?.invalid && (contactForm.get('lname')?.dirty || contactForm.get('lname')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('lname')?.errors?.['required']">Last Name
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('lname')?.errors?.['pattern']">Last Name
+                                        must contain only alphabets and be between 3 and 40 characters</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" formControlName="email" placeholder="Enter Your Email"
+                                    class="form-control" id="email">
+                                <!-- Display error message if email is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('email')?.errors?.['required']">Email
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('email')?.errors?.['pattern']">Invalid email
+                                        format</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input formControlName="phone"
+                                    placeholder="Enter Your Phone Number (eg. +1 804 496 1632)" class="form-control"
+                                    id="phone">
+                                <div
+                                    *ngIf="contactForm.get('phone')?.invalid && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('phone')?.errors?.['required']">Phone Number
+                                        required</div>
+                                    <div class="err" *ngIf="contactForm.get('phone')?.errors?.['pattern']">
+                                        <span *ngIf="!contactForm.get('phone')?.errors?.['numbersOnly']">Only numbers
+                                            and spaces are allowed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" formControlName="message" id="message"
+                                    placeholder="Enter Your Message" rows="3"></textarea>
+                                <!-- Display error message if message is invalid -->
+                                <div
+                                    *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)">
+                                    <div class="err" *ngIf="contactForm.get('message')?.errors?.['required']">Message
+                                        required</div>
+                                </div>
+                            </div>
+                            <!-- recaptcha -->
+                            <div class="mb-3">
+                                <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+                                </ngx-recaptcha2>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn rounded-pill sub-button"
+                                    [disabled]="contactForm.invalid">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" *ngIf="successMsg">
+        <div class="thank-box">
+            <h4>Message Has Been Sent</h4>
+            <p>Thank's For Contacting Us. We will be in touch with you shortly...</p>
+        </div>
+    </section>
+</div>

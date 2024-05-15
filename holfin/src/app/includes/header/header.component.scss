@@ -1,0 +1,58 @@
+
+.navbar {
+    background-color: white;
+    height: 90px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 0.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.navbar-brand {
+    color: #8235ff;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+.nav-link.active {
+    color: #8235ff;
+    font-weight: bold;
+}
+
+@media (max-width: 991.98px) {
+    /* Adjust the height of the logo for mobile and tablet views */
+    .navbar-brand img {
+      height: 60px; /* Adjust the height as needed */
+      margin-left: -50px
+    }
+  }
+  
+  /* CSS for larger screens (desktop) */
+  @media (min-width: 992px) {
+    /* Reset the height of the logo for larger screens */
+    .navbar-brand img {
+      height: 70px; /* Default height for larger screens */
+    }
+  }
